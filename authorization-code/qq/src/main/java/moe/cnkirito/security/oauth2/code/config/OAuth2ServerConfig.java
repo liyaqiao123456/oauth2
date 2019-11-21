@@ -92,11 +92,11 @@ public class OAuth2ServerConfig {
             // @formatter:off
             clients.inMemory().withClient("aiqiyi")
                     .resourceIds(QQ_RESOURCE_ID)
-                    .authorizedGrantTypes("authorization_code", "refresh_token", "implicit")
+                    .authorizedGrantTypes("password","authorization_code", "refresh_token", "implicit")
                     .authorities("ROLE_CLIENT")
                     .scopes("get_user_info", "get_fanslist")
                     .secret("secret")
-                    .redirectUris("http://localhost:8081/aiqiyi/qq/redirect")
+                    .redirectUris("http://localhost:8081/aiqiyi/qq/redirect","http://www.baidu.com")
                     .autoApprove(true)
                     .autoApprove("get_user_info")
                     .and()

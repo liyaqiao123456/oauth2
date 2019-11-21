@@ -38,7 +38,7 @@ public class QQCallbackController {
     RestTemplate restTemplate;
 
     @RequestMapping("/aiqiyi/qq/redirect")
-    public String getToken(@RequestParam String code){
+    public String getToken(@RequestParam(required = false) String code){
         log.info("receive code {}",code);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
